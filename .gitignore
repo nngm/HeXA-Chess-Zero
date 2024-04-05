@@ -27,6 +27,7 @@
 *.lib
 
 # Executables
+chess
 *.exe
 *.out
 *.app

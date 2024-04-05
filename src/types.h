@@ -20,6 +20,22 @@ enum Piece {
     PIECE_NB = 16
 };
 
+enum CastlingRights {
+    NO_CASTLING,
+    WHITE_OO,
+    WHITE_OOO = WHITE_OO << 1,
+    BLACK_OO  = WHITE_OO << 2,
+    BLACK_OOO = WHITE_OO << 3,
+
+    KING_SIDE      = WHITE_OO | BLACK_OO,
+    QUEEN_SIDE     = WHITE_OOO | BLACK_OOO,
+    WHITE_CASTLING = WHITE_OO | WHITE_OOO,
+    BLACK_CASTLING = BLACK_OO | BLACK_OOO,
+    ANY_CASTLING   = WHITE_CASTLING | BLACK_CASTLING,
+
+    CASTLING_RIGHT_NB = 16
+};
+
 enum Square : int {
     SQ_A1, SQ_B1, SQ_C1, SQ_D1, SQ_E1, SQ_F1, SQ_G1, SQ_H1,
     SQ_A2, SQ_B2, SQ_C2, SQ_D2, SQ_E2, SQ_F2, SQ_G2, SQ_H2,
